@@ -5,7 +5,7 @@ RECORD="$3"
 
 if [ -z "$API_KEY" ] || [ -z "$DOMAIN" ] || [ -z "$RECORD" ]; then
   echo "Error: Please provide the API key, domain, and record as arguments."
-  echo "Usage: ./update_dns.sh <api_key> <domain> <record>"
+  echo "Usage: ./dynamic_dns_update.sh <api_key> <domain> <record>"
   exit 1
 fi
 
