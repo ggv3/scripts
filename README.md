@@ -6,6 +6,12 @@ a repository of scripts that I use in some of my projects
 
 I use [Gandi](https://www.gandi.net/) as my DNS provider and since I don't have a static IP address, it is possible that my it will change and now my DNS routing wont work. Luckily Gandi has an API that one can use to update your DNS records. So I created a script that I run in my home server as a cron job every 30 minutes which will update the DNS record with my current IP address.
 
+Usage:
+
+```bash
+./update_dns.sh your_api_key domain record
+```
+
 ## Dedicated server management
 
 I have a home server that I use to host dedicated servers for a few steam games. It is quite a hassle to always login with the steamCMD, remember the app id etc. So I created scripts for installing/updating the games, running them on the background in a tmux session and closing them.

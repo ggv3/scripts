@@ -1,8 +1,16 @@
 #!/bin/bash
-API_KEY="API_KEY"
-DOMAIN="DOMAIN"
+API_KEY="$1"
+DOMAIN="$2"
+RECORD="$3"
+
+if [ -z "$API_KEY" ] || [ -z "$DOMAIN" ] || [ -z "$RECORD" ]; then
+  echo "Error: Please provide the API key, domain, and record as arguments."
+  echo "Usage: ./update_dns.sh <api_key> <domain> <record>"
+  exit 1
+fi
+
 EXT_IP=$(curl -s ifconfig.me)
-RECORD="RECORD"
+
 
 curl -X PUT \
      -H "Authorization: Apikey $API_KEY" \
