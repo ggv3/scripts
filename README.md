@@ -9,7 +9,7 @@ I use [Gandi](https://www.gandi.net/) as my DNS provider and since I don't have 
 Usage:
 
 ```bash
-./update_dns.sh your_api_key domain record
+./dynamic_dns_update.sh your_api_key domain record
 ```
 
 ## Dedicated server management
