@@ -18,8 +18,11 @@ fi
 if tmux has-session -t "$SERVICE_NAME" &>/dev/null; then
   echo "The $SERVICE_NAME is already running."
 else
-  cd "/home/runner/games/$SERVICE_NAME"
-  tmux new-session -d -s "$SERVICE_NAME" ./$SCRIPT_NAME &
+  cd "$HOME/games/$SERVICE_NAME" || {
+    echo "Error: Directory $HOME/games/$SERVICE_NAME does not exist."
+    exit 1
+  }
+  tmux new-session -d -s "$SERVICE_NAME" "./$SCRIPT_NAME" &
   echo "The $SERVICE_NAME has been started."
 fi
 
